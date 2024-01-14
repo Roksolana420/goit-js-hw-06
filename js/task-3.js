@@ -1,5 +1,6 @@
 class StringBuilder {
-    constructor(value ) {
+    #value;
+    constructor({value} ) {
         this.#value  = value ;
     }
     getValue() {
@@ -18,12 +19,16 @@ class StringBuilder {
     }
 }
 
+const q = document.querySelector("input")
+console.log(q)
+q.addEventListener("input", function(e) {
+    console.log(e.target.value)
+})
 
 
 
 
-
-const builder = new StringBuilder(".");
+const builder = new StringBuilder({value : "."});
 console.log(builder.getValue()); // "."
 builder.padStart("^");
 console.log(builder.getValue()); // "^."
